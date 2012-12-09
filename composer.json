@@ -1,0 +1,8 @@
+{
+    "name": "Roommate Expense Buddy API",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.0.3",
+        "doctrine/orm": "*"
+    }
+}
