@@ -2,7 +2,7 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Rest\Controller\Index' => 'Rest\Controller\IndexController',
+            'Rest\Controller\index' => 'Rest\Controller\IndexController',
         ),
     ),
    'router' => array(
@@ -10,12 +10,34 @@ return array(
             'rest' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/rest[/:id]',
-                    'constraints' => array(
-                        'id'     => '[0-9]+',
-                    ),
+                    'route'    => '/rest',
                     'defaults' => array(
-                        'controller' => 'Rest\Controller\Index',
+                        '__NAMESPACE__' => 'Rest\Controller',
+                        'controller' => 'Index',
+                    ),
+                ),
+                'child_routes' => array(
+                    'default' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => '/[:controller[/:uuid]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id' => '[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}',
+                            ),
+                        ),
+                    ),
+                    'action' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
                     ),
                 ),
             ),

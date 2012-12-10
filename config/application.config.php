@@ -2,8 +2,8 @@
 return array(
     'modules' => array(
         'Application',
-        'Album',
-        'AlbumRest',
+        'DoctrineModule',
+        'DoctrineORMModule',
         'Rest',
     ),
     'module_listener_options' => array(

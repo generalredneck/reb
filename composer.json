@@ -1,8 +1,11 @@
 {
     "name": "Roommate Expense Buddy API",
+    "minimum-stability": "alpha",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.0.3",
-        "doctrine/orm": "*"
+        "zendframework/zendframework": "2.0.*",
+        "doctrine/doctrine-orm-module": "0.*",
+        "doctrine/data-fixtures": "v1.0.0-ALPHA3",
+        "doctrine/doctrine-module": "0.6.x-dev"
     }
 }

@@ -3,6 +3,7 @@ namespace Rest\Controller;
 
 use Zend\Mvc\Controller\AbstractRestfulController;
 use Zend\View\Model\ViewModel;
+use Zend\View\Model\JsonModel;
 use stdClass;
 
 class IndexController extends AbstractRestfulController
@@ -11,12 +12,10 @@ class IndexController extends AbstractRestfulController
     {
         $obj = new stdClass();
         $obj->brain = 'blah';
-        $data = array(
-          $obj
-        );
-        return array(
+        $model = new JsonModel(array(
             'data' => $obj
-        );
+        ));
+        return $model;
     }
 
     public function get($id)
@@ -40,5 +39,9 @@ class IndexController extends AbstractRestfulController
     public function delete($id)
     {
         # code...
+    }
+
+    public function syncAction(){
+      return new JsonModel(array("works"));
     }
 }
