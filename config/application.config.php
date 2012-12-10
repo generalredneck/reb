@@ -2,9 +2,13 @@
 return array(
     'modules' => array(
         'Application',
+        'Rest',
+        // 3rd party modules
         'DoctrineModule',
         'DoctrineORMModule',
-        'Rest',
+        'ZfcBase',
+        'ZfcUser',
+        'ZfcUserDoctrineORM',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
