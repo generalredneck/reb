@@ -1,6 +1,7 @@
 <?php
 namespace Rest\Controller;
 
+use Doctrine\ORM\EntityManager;
 use Zend\Mvc\Controller\AbstractRestfulController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
@@ -8,6 +9,18 @@ use stdClass;
 
 class IndexController extends AbstractRestfulController
 {
+    /**
+     * @var Doctrine\ORM\EntityManager
+     */
+    protected $em;
+
+    public function getEntityManager()
+    {
+        if (null === $this->em) {
+            $this->em = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+        }
+        return $this->em;
+    }
     public function getList()
     {
         $obj = new stdClass();

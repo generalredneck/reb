@@ -6,9 +6,11 @@ return array(
         // 3rd party modules
         'DoctrineModule',
         'DoctrineORMModule',
+        'CdliUserProfile',
         'ZfcBase',
         'ZfcUser',
         'ZfcUserDoctrineORM',
+        'ZfcRbac',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(

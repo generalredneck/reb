@@ -3,11 +3,13 @@
     "minimum-stability": "alpha",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.0.*",
+        "zendframework/zendframework": "dev-develop",
         "doctrine/doctrine-module": "0.6.x-dev",
         "doctrine/doctrine-orm-module": "0.*",
+        "cdli/user-profile": "dev-master",
         "zf-commons/zfc-base": "dev-master",
         "zf-commons/zfc-user": "dev-master",
-        "zf-commons/zfc-user-doctrine-orm": "dev-master"
+        "zf-commons/zfc-user-doctrine-orm": "dev-master",
+        "zf-commons/zfc-rbac": "dev-master"
     }
 }
